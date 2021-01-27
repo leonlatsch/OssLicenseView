@@ -1,6 +1,9 @@
 # OssLicenseView
 A android view for open source Licenses.
 
+[![](https://jitpack.io/v/leonlatsch/OssLicenseView.svg)](https://jitpack.io/#leonlatsch/OssLicenseView)
+
+
 # Getting Started
 
 This library uses the json report file from [jaredsburrows/gradle-license-plugin](https://github.com/jaredsburrows/gradle-license-plugin)!
@@ -29,7 +32,15 @@ This will generate a json report of your dependencies like [this](app/src/main/a
 
 - Add this dependency:
 ```gradle
-TODO
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+```gradle
+implementation 'com.github.leonlatsch:OssLicenseView:$VERSION'
 ```
 
 - Create a new OssLicenseView
