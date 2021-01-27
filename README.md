@@ -48,6 +48,7 @@ ossRecyclerView.initialize("licenseReleaseReport.json") // The file will most li
 
 ## Thats it!
 It will display like this.
+
 <img src="meta/screenshot.png" width="400px"/>
 
 # Other
