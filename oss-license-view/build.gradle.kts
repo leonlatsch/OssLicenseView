@@ -17,6 +17,7 @@
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    id("maven-publish")
 }
 
 android {
@@ -48,6 +49,16 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.leonlatsch"
+            artifactId = "oss-license-view"
+            version = "0.1.1-alpha"
+        }
     }
 }
 
