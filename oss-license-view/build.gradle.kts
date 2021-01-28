@@ -20,9 +20,6 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.leonlatsch"
-version = "0.1.3"
-
 android {
     compileSdkVersion(30)
     buildToolsVersion("30.0.2")
@@ -31,7 +28,7 @@ android {
         minSdkVersion(16)
         targetSdkVersion(30)
         versionCode = 3
-        versionName = version.toString()
+        versionName = "1.4.4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -59,7 +56,7 @@ publishing {
         create<MavenPublication>("deploy") {
             groupId = "com.github.leonlatsch"
             artifactId = "OssLicenseView"
-            version = "0.1.3"
+            version = "0.1.4"
             artifact("$buildDir/outputs/aar/oss-license-view-release.aar")
         }
     }
