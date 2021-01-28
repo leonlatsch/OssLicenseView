@@ -20,6 +20,9 @@ plugins {
     id("maven-publish")
 }
 
+group = "com.github"
+version = "0.1.1-alpha"
+
 android {
     compileSdkVersion(30)
     buildToolsVersion("30.0.2")
@@ -28,7 +31,7 @@ android {
         minSdkVersion(16)
         targetSdkVersion(30)
         versionCode = 2
-        versionName = "0.1.1-alpha"
+        versionName = version.toString()
         buildConfigField("String", "VERSION", "\"$versionName\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
