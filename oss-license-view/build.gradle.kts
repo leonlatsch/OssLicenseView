@@ -17,6 +17,7 @@
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    id("maven-publish")
 }
 
 android {
@@ -26,8 +27,9 @@ android {
     defaultConfig {
         minSdkVersion(16)
         targetSdkVersion(30)
-        versionCode = 1
-        versionName = "0.1.0-alpha"
+        versionCode = 2
+        versionName = "0.1.1-alpha"
+        buildConfigField("String", "VERSION", "\"$versionName\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,6 +52,16 @@ android {
     }
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.leonlatsch"
+            artifactId = "oss-license-view"
+            version = "0.1.1-alpha"
+        }
+    }
+}
+
 dependencies {
     // Gson
     implementation("com.google.code.gson", "gson", "2.8.6")
@@ -57,4 +69,5 @@ dependencies {
     implementation("androidx.core:core-ktx:1.3.2")
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("com.google.android.material:material:1.2.1")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.21")
 }
