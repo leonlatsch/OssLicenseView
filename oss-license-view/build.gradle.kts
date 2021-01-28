@@ -20,6 +20,9 @@ plugins {
     id("maven-publish")
 }
 
+group = "com.github.leonlatsch"
+version = "0.1.2-alpha"
+
 android {
     compileSdkVersion(30)
     buildToolsVersion("30.0.2")
@@ -27,9 +30,8 @@ android {
     defaultConfig {
         minSdkVersion(16)
         targetSdkVersion(30)
-        versionCode = 2
-        versionName = "0.1.1-alpha"
-        buildConfigField("String", "VERSION", "\"$versionName\"")
+        versionCode = 3
+        versionName = version.toString()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -54,10 +56,11 @@ android {
 
 publishing {
     publications {
-        create<MavenPublication>("maven") {
+        create<MavenPublication>("deploy") {
             groupId = "com.github.leonlatsch"
-            artifactId = "oss-license-view"
-            version = "0.1.1-alpha"
+            artifactId = "OssLicenseView"
+            version = "0.1.2-alpha"
+            artifact("$buildDir/outputs/aar/oss-license-view-release.aar")
         }
     }
 }
@@ -69,5 +72,4 @@ dependencies {
     implementation("androidx.core:core-ktx:1.3.2")
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("com.google.android.material:material:1.2.1")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.21")
 }
