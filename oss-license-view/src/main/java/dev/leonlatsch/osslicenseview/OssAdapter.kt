@@ -20,7 +20,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class OssAdapter(
+/**
+ * Adapter for creating [OssViewHolder]s in [OssLicenseView].
+ *
+ * @since 0.1.0
+ * @author Leon Latsch
+ */
+internal class OssAdapter(
     private val ossEntries: List<OssEntry>
 ) : RecyclerView.Adapter<OssViewHolder>() {
 

@@ -23,6 +23,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
+/**
+ * A Recycler View for displaying json reports from the plugin shown below.
+ *
+ * https://github.com/jaredsburrows/gradle-license-plugin
+ *
+ * @since 0.1.0
+ * @author Leon Latsch
+ */
 class OssLicenseView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet?,
