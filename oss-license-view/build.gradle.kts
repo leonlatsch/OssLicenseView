@@ -21,7 +21,7 @@ plugins {
 }
 
 group = "com.github.leonlatsch"
-version = "0.1.2-alpha"
+version = "0.1.3"
 
 android {
     compileSdkVersion(30)
@@ -59,7 +59,7 @@ publishing {
         create<MavenPublication>("deploy") {
             groupId = "com.github.leonlatsch"
             artifactId = "OssLicenseView"
-            version = "0.1.2-alpha"
+            version = "0.1.3"
             artifact("$buildDir/outputs/aar/oss-license-view-release.aar")
         }
     }
