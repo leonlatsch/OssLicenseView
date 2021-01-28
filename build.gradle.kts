@@ -30,6 +30,10 @@ buildscript {
     }
 }
 
+plugins {
+    id("maven")
+}
+
 allprojects {
     repositories {
         google()

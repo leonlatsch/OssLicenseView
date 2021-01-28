@@ -16,4 +16,4 @@
 
 include(":oss-license-view")
 include(":app")
-rootProject.name = "oss-license-view"
+//rootProject.name = "oss-license-view"
