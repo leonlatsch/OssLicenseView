@@ -18,7 +18,13 @@ package dev.leonlatsch.osslicenseview
 
 import com.google.gson.annotations.SerializedName
 
-data class OssEntry(
+/**
+ * Model representing an entry of the json report.
+ *
+ * @since 0.1.0
+ * @author Leon Latsch
+ */
+internal data class OssEntry(
     val project: String,
     val description: String,
     val version: String,

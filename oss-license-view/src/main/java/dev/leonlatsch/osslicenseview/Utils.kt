@@ -20,7 +20,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 
-fun openUrl(context: Context, url: String?) {
+internal fun openUrl(context: Context, url: String?) {
     url ?: return
 
     val intent = Intent(Intent.ACTION_VIEW)

@@ -22,7 +22,13 @@ import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 
-class OssViewHolder(
+/**
+ * Maps [OssEntry] to the item view.
+ *
+ * @since 0.1.0
+ * @author Leon Latsch
+ */
+internal class OssViewHolder(
     private val context: Context,
     view: View
 ) : RecyclerView.ViewHolder(view) {
