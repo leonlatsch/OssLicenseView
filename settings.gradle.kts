@@ -14,6 +14,6 @@
  *   limitations under the License.
  */
 
-include ':oss-license-view'
-include ':app'
+include(":oss-license-view")
+include(":app")
 rootProject.name = "oss-license-view"
