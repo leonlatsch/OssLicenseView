@@ -40,22 +40,38 @@ internal class OssViewHolder(
 
     private val licenseDetails = itemView.findViewById<LinearLayout>(R.id.itemOssDetails)
     private val packageName = itemView.findViewById<AppCompatTextView>(R.id.itemOssPackageName)
+    private val copyright = itemView.findViewById<AppCompatTextView>(R.id.itemOssCopyright)
 
     fun bindTo(ossEntry: OssEntry) {
         project.text = ossEntry.project
         version.text = ossEntry.version
+        packageName.text = ossEntry.dependency
+
         licenseGeneral.setOnClickListener {
             openUrl(context, ossEntry.url)
         }
 
-        ossEntry.licenses.firstOrNull().let {
-            it ?: return@let
+        ossEntry.licenses.firstOrNull()?.let {
+            copyright.text = COPYRIGHT
+                .replace(COPYRIGHT_YEAR_PLACEHOLDER, ossEntry.year ?: COPYRIGHT_YEAR_DEFAULT)
+                .replace(COPYRIGHT_AUTHOR_PLACEHOLDER, ossEntry.developers.firstOrNull() ?: COPYRIGHT_AUTHOR_DEFAULT)
+
             license.text = it.license
             licenseDetails.setOnClickListener { _ ->
                 openUrl(context, it.licenseUrl)
             }
         }
+    }
 
-        packageName.text = ossEntry.dependency
+    companion object {
+
+        private const val COPYRIGHT_AUTHOR_PLACEHOLDER = "{author}"
+        private const val COPYRIGHT_AUTHOR_DEFAULT = "The original authors"
+
+        private const val COPYRIGHT_YEAR_PLACEHOLDER = "{year}"
+        private const val COPYRIGHT_YEAR_DEFAULT = "20XX"
+
+        private const val COPYRIGHT = "Copyright (c) $COPYRIGHT_YEAR_PLACEHOLDER $COPYRIGHT_AUTHOR_PLACEHOLDER"
+
     }
 }

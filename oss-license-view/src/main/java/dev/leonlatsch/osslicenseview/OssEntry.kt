@@ -30,7 +30,7 @@ internal data class OssEntry(
     val version: String,
     val developers: List<String>,
     val url: String,
-    val year: String,
+    val year: String?,
     val licenses: List<LicenseSubEntry>,
     val dependency: String
 ) {
