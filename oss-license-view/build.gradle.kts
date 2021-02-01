@@ -27,8 +27,8 @@ android {
     defaultConfig {
         minSdkVersion(16)
         targetSdkVersion(30)
-        versionCode = 10
-        versionName = "1.0.0"
+        versionCode = 11
+        versionName = "1.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,7 +56,7 @@ publishing {
         create<MavenPublication>("deploy") {
             groupId = "com.github.leonlatsch"
             artifactId = "OssLicenseView"
-            version = "1.0.0"
+            version = "1.1.0"
             artifact("$buildDir/outputs/aar/oss-license-view-release.aar")
         }
     }

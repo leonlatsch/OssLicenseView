@@ -26,8 +26,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="?android:attr/colorBackground"
+        android:orientation="vertical"
         android:padding="6dp">
 
         <LinearLayout
@@ -36,21 +36,35 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/itemOssProject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:lines="1"
-                android:text="TITLE"
-                android:textColor="?android:attr/textColorPrimary" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/itemOssVersion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:lines="1"
-                android:text="version"
-                android:textColor="?android:attr/textColorSecondary" />
+                <TextView
+                    android:id="@+id/itemOssProject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="TITLE"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <TextView
+                    android:text="•"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/itemOssVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="version"
+                    android:textColor="?android:attr/textColorSecondary" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/itemOssPackageName"
@@ -62,6 +76,15 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:src="?android:attr/textColorSecondary"
+            android:textColor="?android:attr/textColorSecondary"
+            tools:ignore="ContentDescription" />
+
         <LinearLayout
             android:id="@+id/itemOssDetails"
             android:layout_width="match_parent"
@@ -69,14 +92,13 @@
             android:orientation="vertical"
             tools:ignore="UseCompoundDrawables">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
-                android:src="?android:attr/textColorSecondary"
-                android:textColor="?android:attr/textColorSecondary"
-                tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/itemOssCopyright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="copyright"
+                android:textColor="?android:attr/textColorSecondary" />
 
             <TextView
                 android:id="@+id/itemOssLicense"
