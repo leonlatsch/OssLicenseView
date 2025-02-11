@@ -51,7 +51,7 @@ publishing {
         create<MavenPublication>("deploy") {
             groupId = "com.github.leonlatsch"
             artifactId = "OssLicenseView"
-            version = "1.1.2"
+            version = "1.1.3"
             artifact("${layout.buildDirectory.get().asFile.absolutePath}/outputs/aar/oss-license-view-release.aar")
         }
     }
