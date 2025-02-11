@@ -52,7 +52,7 @@ publishing {
             groupId = "com.github.leonlatsch"
             artifactId = "OssLicenseView"
             version = "1.1.2"
-            artifact("${layout.buildDirectory}/outputs/aar/oss-license-view-release.aar")
+            artifact("${layout.buildDirectory.get().asFile.absolutePath}/outputs/aar/oss-license-view-release.aar")
         }
     }
 }
