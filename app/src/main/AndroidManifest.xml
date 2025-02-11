@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~   Copyright 2021 Leon Latsch
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~   Copyright 2021 - 2025 Leon Latsch
   ~
   ~   Licensed under the Apache License, Version 2.0 (the "License");
   ~   you may not use this file except in compliance with the License.
@@ -25,13 +24,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Osslicenseview">
-        <activity android:name="dev.leonlatsch.osslicenseviewdemo.MainActivity">
+
+        <activity
+            android:name="dev.leonlatsch.osslicenseviewdemo.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

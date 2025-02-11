@@ -1,5 +1,5 @@
 /*
- *   Copyright 2021 Leon Latsch
+ *   Copyright 2021 - 2025 Leon Latsch
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -13,24 +13,22 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-
 plugins {
     id("com.android.application")
-    id("kotlin-android")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    compileSdkVersion(30)
-    buildToolsVersion("30.0.2")
+    namespace = "dev.leonlatsch.osslicenseviewdemo"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId("dev.leonlatsch.osslicenseviewdemo")
-        minSdkVersion(16)
-        targetSdkVersion(30)
+        applicationId = "dev.leonlatsch.osslicenseviewdemo"
+        minSdk = 21
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
     }
 
     buildTypes {
@@ -38,11 +36,12 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                file("proguard-rules.pro")
             )
         }
     }
     compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
@@ -54,11 +53,9 @@ android {
 dependencies {
     implementation(project(":oss-license-view"))
 
-    implementation("androidx.core:core-ktx:1.3.2")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.1.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
-    testImplementation("junit:junit:4.+")
-    androidTestImplementation("androidx.test.ext:junit:1.1.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
+    testImplementation("junit:junit:4.13.2")
 }

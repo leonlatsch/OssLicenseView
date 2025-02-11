@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~   Copyright 2021 Leon Latsch
+  ~   Copyright 2021 - 2025 Leon Latsch
   ~
   ~   Licensed under the Apache License, Version 2.0 (the "License");
   ~   you may not use this file except in compliance with the License.
@@ -15,20 +15,21 @@
   -->
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
     android:animateLayoutChanges="true"
     android:orientation="vertical"
-    tools:ignore="HardcodedText">
+    app:cardCornerRadius="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?android:attr/colorBackground"
         android:orientation="vertical"
-        android:padding="6dp">
+        android:padding="12dp">
 
         <LinearLayout
             android:id="@+id/itemOssGeneral"
@@ -44,25 +45,26 @@
                     android:id="@+id/itemOssProject"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:lines="1"
-                    android:text="TITLE"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:maxLines="2"
+                    android:textColor="?android:attr/textColorPrimary"
+                    tools:text="TITLE" />
 
                 <TextView
-                    android:text="•"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_marginEnd="6dp"
-                    android:textColor="?android:attr/textColorSecondary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:text="•"
+                    tools:ignore="HardcodedText"
+                    tools:textColor="?android:attr/textColorSecondary" />
 
                 <TextView
                     android:id="@+id/itemOssVersion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
-                    android:text="version"
-                    android:textColor="?android:attr/textColorSecondary" />
+                    tools:text="version"
+                    tools:textColor="?android:attr/textColorSecondary" />
 
             </LinearLayout>
 
@@ -71,8 +73,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lines="1"
-                android:text="packageName"
-                android:textColor="?android:attr/textColorSecondary" />
+                tools:text="packageName"
+                tools:textColor="?android:attr/textColorSecondary" />
 
         </LinearLayout>
 
@@ -82,8 +84,8 @@
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
             android:src="?android:attr/textColorSecondary"
-            android:textColor="?android:attr/textColorSecondary"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription"
+            tools:textColor="?android:attr/textColorSecondary" />
 
         <LinearLayout
             android:id="@+id/itemOssDetails"
@@ -97,16 +99,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:text="copyright"
-                android:textColor="?android:attr/textColorSecondary" />
+                tools:text="copyright"
+                tools:textColor="?android:attr/textColorSecondary" />
 
             <TextView
                 android:id="@+id/itemOssLicense"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lines="1"
-                android:text="license"
-                android:textColor="?android:attr/textColorSecondary" />
+                android:textColor="?android:attr/textColorSecondary"
+                tools:text="license" />
 
         </LinearLayout>
     </LinearLayout>
